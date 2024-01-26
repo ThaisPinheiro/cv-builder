@@ -1,6 +1,6 @@
-package com.cvbuilder.repositories;
+package com.cvbuilder.personalData.repositories;
 
-import com.cvbuilder.models.PersonalDataModel;
+import com.cvbuilder.personalData.models.PersonalDataModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

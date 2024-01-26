@@ -1,6 +1,6 @@
-package com.cvbuilder.services;
+package com.cvbuilder.personalData.services;
 
-import com.cvbuilder.repositories.PersonalDataRepository;
+import com.cvbuilder.personalData.repositories.PersonalDataRepository;
 import org.springframework.stereotype.Service;
 
 @Service
