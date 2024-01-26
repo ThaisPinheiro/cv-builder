@@ -1,6 +1,6 @@
-package com.cvbuilder.controllers;
+package com.cvbuilder.personalData.controllers;
 
-import com.cvbuilder.services.PersonalDataService;
+import com.cvbuilder.personalData.services.PersonalDataService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

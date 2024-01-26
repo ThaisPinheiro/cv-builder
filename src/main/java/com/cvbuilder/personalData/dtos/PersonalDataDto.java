@@ -1,4 +1,4 @@
-package com.cvbuilder.dtos;
+package com.cvbuilder.personalData.dtos;
 
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
