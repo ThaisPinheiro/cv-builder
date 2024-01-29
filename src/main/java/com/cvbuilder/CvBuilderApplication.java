@@ -12,6 +12,6 @@ public class CvBuilderApplication {
 	public static void main(String[] args) { SpringApplication.run(CvBuilderApplication.class, args); }
 	@GetMapping("/")
 	public String index() {
-		return "Hello World!";
+		return "Hello World! Quebrando a maldição.";
 	}
 }
