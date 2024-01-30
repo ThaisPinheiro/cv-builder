@@ -1,4 +1,4 @@
-package com.cvbuilder.personalData.models;
+package com.cvbuilder.user.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,12 +7,16 @@ import lombok.Setter;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.UUID;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import java.time.Instant;
+
 
 @Entity
 @Getter
 @Setter
-@Table(name = "personal_data")
-public class PersonalDataModel implements Serializable {
+@Table(name = "user")
+public class UserModel implements Serializable {
     
     @Serial
     private static final long serialVersionUID = 1L;
@@ -38,5 +42,11 @@ public class PersonalDataModel implements Serializable {
 
     @Column(length = 200)
     private String portfolio;
+
+    @CreationTimestamp
+    private Instant createdAt;
+
+    @UpdateTimestamp
+    private Instant updatedAt;
 
 }
