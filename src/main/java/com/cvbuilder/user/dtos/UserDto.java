@@ -1,6 +1,5 @@
-package com.cvbuilder.personalData.dtos;
+package com.cvbuilder.user.dtos;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -9,7 +8,7 @@ import lombok.Data;
 import org.hibernate.validator.constraints.URL;
 
 @Data
-public class PersonalDataDto {
+public class UserDto {
     @NotBlank(message = "O campo Nome é obrigatório")
     @Size(max = 30, message = "O campo Nome deve conter até 30 caracteres")
     private String name;
