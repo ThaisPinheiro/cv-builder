@@ -11,7 +11,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import java.time.Instant;
 
-
 @Entity
 @Getter
 @Setter
@@ -42,6 +41,9 @@ public class UserModel implements Serializable {
 
     @Column(length = 200)
     private String portfolio;
+
+    @Column(length = 2000)
+    private String aboutMe;
 
     @CreationTimestamp
     private Instant createdAt;

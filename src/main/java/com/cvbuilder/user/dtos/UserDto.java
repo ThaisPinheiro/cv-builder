@@ -35,4 +35,7 @@ public class UserDto {
     @Size(max = 200)
     private String portfolio;
 
+    @Size(max = 2000, message = "Sua descrição deve conter até 2000 caracteres")
+    private String aboutMe;
+
 }
