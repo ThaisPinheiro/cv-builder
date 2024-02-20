@@ -16,7 +16,7 @@ import java.util.UUID;
 
 @RestController
 //@CrossOrigin() -> Verificar caso de uso da aplicação
-@RequestMapping("/user")
+@RequestMapping("/userResume")
 public class UserController { // só conversa com service
 
     final UserService userService;

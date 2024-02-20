@@ -20,15 +20,15 @@ import com.cvbuilder.user.models.UserModel;
 @Table(name = "resume")
 public class ResumeModel implements Serializable {
   
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private UUID id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
 
-  @Column(nullable = false, length = 30)
-  private String description;
+    @Column(nullable = false, length = 2000)
+    private String description;
 
-  @ManyToOne
-  @JoinColumn(name = "user_id", nullable = false)
-  private UserModel user;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserModel user;
 
 }

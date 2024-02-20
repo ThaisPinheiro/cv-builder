@@ -14,7 +14,7 @@ import java.time.Instant;
 @Entity
 @Getter
 @Setter
-@Table(name = "user")
+@Table(name = "user_resume")
 public class UserModel implements Serializable {
     
     @Serial
