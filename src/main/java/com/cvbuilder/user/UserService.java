@@ -3,7 +3,6 @@ package com.cvbuilder.user;
 import com.cvbuilder.user.models.UserModel;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

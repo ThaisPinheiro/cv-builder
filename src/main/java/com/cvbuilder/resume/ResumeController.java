@@ -1,9 +1,7 @@
 package com.cvbuilder.resume;
 
 import java.util.Objects;
-import java.util.Optional;
 
-import org.apache.catalina.User;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,11 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.cvbuilder.resume.dtos.ResumeDto;
 import com.cvbuilder.user.UserRepository;
 import com.cvbuilder.user.models.UserModel;
-
 import jakarta.validation.Valid;
 
 @RestController
