@@ -3,6 +3,7 @@ package com.cvbuilder.resume;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import jakarta.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ public class ResumeService {
     this.resumeRepository = resumeRepository;
   }
 
+  @Transactional
   public ResumeModel save(ResumeModel resumeModel) {
     return resumeRepository.save(resumeModel);
   }

@@ -6,9 +6,13 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.cvbuilder.resume.ResumeModel;
+
 import java.time.Instant;
 
 @Entity
@@ -50,5 +54,8 @@ public class UserModel implements Serializable {
 
     @UpdateTimestamp
     private Instant updatedAt;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "userResume")
+    private List<ResumeModel> resumes;
 
 }

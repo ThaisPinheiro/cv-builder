@@ -49,7 +49,7 @@ public class ResumeController {
     //tratar exceção e conversar com a service
     UserModel user = userRepository.findById(resumeDto.getUserId())
     .orElseThrow();
-    resumeModel.setUser(user);
+    resumeModel.setUserResume(user);
   
     ResumeModel savedResumeModel = resumeService.save(resumeModel);
 
