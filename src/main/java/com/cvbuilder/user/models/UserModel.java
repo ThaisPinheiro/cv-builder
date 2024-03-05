@@ -3,19 +3,19 @@ package com.cvbuilder.user.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import com.cvbuilder.resume.ResumeModel;
 import java.time.Instant;
-
 
 @Entity
 @Getter
 @Setter
-@Table(name = "user")
+@Table(name = "user_resume")
 public class UserModel implements Serializable {
     
     @Serial
@@ -43,10 +43,16 @@ public class UserModel implements Serializable {
     @Column(length = 200)
     private String portfolio;
 
+    @Column(length = 2000)
+    private String aboutMe;
+
     @CreationTimestamp
     private Instant createdAt;
 
     @UpdateTimestamp
     private Instant updatedAt;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "userResume")
+    private List<ResumeModel> resumes;
 
 }

@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,7 +15,7 @@ import java.util.UUID;
 
 @RestController
 //@CrossOrigin() -> Verificar caso de uso da aplicação
-@RequestMapping("/user")
+@RequestMapping("/userResume")
 public class UserController { // só conversa com service
 
     final UserService userService;
