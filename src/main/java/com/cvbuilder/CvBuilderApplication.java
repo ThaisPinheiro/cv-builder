@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class CvBuilderApplication {
 
 	public static void main(String[] args) { SpringApplication.run(CvBuilderApplication.class, args); }
-	@GetMapping("/")
+	@GetMapping("/auth/login")
 	public String index() {
-		return "Hello World! Quebrando a maldição.";
+		System.out.println("Deu certo");
+		return "Hello World! Quebrando a maldição. Garantindo atualização";
 	}
 }

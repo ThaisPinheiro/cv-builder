@@ -19,7 +19,7 @@ public class UserDto {
     private String surname;
 
     @NotBlank(message = "O campo Telefone é obrigatório")
-    @Pattern(regexp = "\\d+", message = "O campo 'telefone' deve conter apenas dígitos")
+    @Pattern(regexp = "\\d+", message = "O campo Telefone deve conter apenas dígitos")
     @Size(max = 12, message = "O campo Telefone deve conter até 12 digitos")
     private String telephoneNumber;
 

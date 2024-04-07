@@ -1,4 +1,4 @@
-package com.cvbuilder.user.models;
+package com.cvbuilder.user;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
 import com.cvbuilder.resume.ResumeModel;
 import java.time.Instant;
 
