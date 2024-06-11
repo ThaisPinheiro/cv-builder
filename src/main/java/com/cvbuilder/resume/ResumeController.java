@@ -39,7 +39,7 @@ public class ResumeController {
     }
 
     if (resumeDto.getUserId() == null) {
-      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("O campo userId é obrigatório");
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("The UserId field is required.");
     }
 
     ResumeModel resumeModel = new ResumeModel();

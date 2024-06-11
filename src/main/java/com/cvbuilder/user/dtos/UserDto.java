@@ -10,21 +10,21 @@ import org.hibernate.validator.constraints.URL;
 @Data
 public class UserDto {
     
-    @NotBlank(message = "O campo Nome é obrigatório")
-    @Size(max = 30, message = "O campo Nome deve conter até 30 caracteres")
+    @NotBlank(message = "The Name field is required.")
+    @Size(max = 30, message = "The Name field must contain up to 30 characters.")
     private String name;
 
-    @NotBlank(message = "O campo Sobrenome é obrigatório")
-    @Size(max = 50, message = "O campo Sobrenome deve conter até 50 caracteres")
+    @NotBlank(message = "The Sobrenome field is required.")
+    @Size(max = 50, message = "The Surname field must contain up to 50 characters.")
     private String surname;
 
-    @NotBlank(message = "O campo Telefone é obrigatório")
-    @Pattern(regexp = "\\d+", message = "O campo 'telefone' deve conter apenas dígitos")
-    @Size(max = 12, message = "O campo Telefone deve conter até 12 digitos")
+    @NotBlank(message = "The Telefone field is required.")
+    @Pattern(regexp = "\\d+", message = "The Telefone field must contain digits only.")
+    @Size(max = 12, message = "The Phone Number field must contain up to 12 digits.")
     private String telephoneNumber;
 
     @Email
-    @NotBlank(message = "O campo E-mail é obrigatório")
+    @NotBlank(message = "The E-mail field is required.")
     @Size(max = 50)
     private String email;
 
@@ -36,7 +36,7 @@ public class UserDto {
     @Size(max = 200)
     private String portfolio;
 
-    @Size(max = 2000, message = "Sua descrição deve conter até 2000 caracteres")
+    @Size(max = 2000, message = "Your description must contain up to 2000 characters.")
     private String aboutMe;
 
 }
