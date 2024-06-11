@@ -9,7 +9,6 @@ import lombok.Data;
 
 @Data
 public class ResumeDto {
-
     @NotNull(message = "O campo user_id é obrigatório")
     private UUID userId;
 

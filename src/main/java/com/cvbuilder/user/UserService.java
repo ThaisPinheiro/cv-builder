@@ -8,8 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class UserService { // só conversa com repository
-    //    ponto de injeção da repository
+public class UserService {
     final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {

@@ -14,10 +14,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-//@CrossOrigin() -> Verificar caso de uso da aplicação
 @RequestMapping("/userResume")
-public class UserController { // só conversa com service
-
+public class UserController {
     final UserService userService;
 
     public UserController(UserService userService) {
@@ -38,21 +36,6 @@ public class UserController { // só conversa com service
         BeanUtils.copyProperties(savedUserModel, savedUserDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedUserDto);
     }
-
-    //Comentado por enquanto para verificar a necessidade da listagem retornando dto
-    // @GetMapping
-    // public ResponseEntity<List<PersonalDataDto>> getUser() {
-    //    List<PersonalDataModel> personalDataModelList = personalDataService.findAll();
-
-    //    List<PersonalDataDto> personalDataDtoList = new ArrayList<>();
-
-    //    for (PersonalDataModel personalDataModel : personalDataModelList) {
-    //     PersonalDataDto personalDataDto = new PersonalDataDto();
-    //     BeanUtils.copyProperties(personalDataModel, personalDataDto);
-    //     personalDataDtoList.add(personalDataDto);
-    //    }
-    //     return ResponseEntity.status(HttpStatus.OK).body(personalDataDtoList);
-    // }
 
     @GetMapping
     public ResponseEntity<List<UserModel>> getUser() {
