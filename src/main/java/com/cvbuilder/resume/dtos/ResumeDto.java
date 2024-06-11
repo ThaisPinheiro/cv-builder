@@ -9,11 +9,12 @@ import lombok.Data;
 
 @Data
 public class ResumeDto {
-    @NotNull(message = "O campo user_id é obrigatório")
+    
+    @NotNull(message = "The UserId field is required.")
     private UUID userId;
 
-    @NotBlank(message = "O campo descrição é obrigatório")
-    @Size(max = 2000, message = "O campo descrição deve conter até 30 caracteres")
+    @NotBlank(message = "The Description field is required.")
+    @Size(max = 2000, message = "The Description field must contain up to 30 characters.")
     private String description;
 
 }
