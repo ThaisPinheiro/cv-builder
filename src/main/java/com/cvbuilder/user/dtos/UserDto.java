@@ -9,6 +9,7 @@ import org.hibernate.validator.constraints.URL;
 
 @Data
 public class UserDto {
+    
     @NotBlank(message = "O campo Nome é obrigatório")
     @Size(max = 30, message = "O campo Nome deve conter até 30 caracteres")
     private String name;
