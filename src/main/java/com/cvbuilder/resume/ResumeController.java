@@ -18,7 +18,6 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/resume")
 public class ResumeController {
-
   final ResumeService resumeService;
   final UserRepository userRepository;
 
@@ -42,7 +41,6 @@ public class ResumeController {
     ResumeModel resumeModel = new ResumeModel();
     BeanUtils.copyProperties(resumeDto, resumeModel);
 
-    //tratar exceção e conversar com a service
     UserModel user = userRepository.findById(resumeDto.getUserId())
     .orElseThrow();
     resumeModel.setUserResume(user);

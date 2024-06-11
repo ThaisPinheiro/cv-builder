@@ -17,7 +17,6 @@ import java.time.Instant;
 @Setter
 @Table(name = "user_resume")
 public class UserModel implements Serializable {
-    
     @Serial
     private static final long serialVersionUID = 1L;
 
