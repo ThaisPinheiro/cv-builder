@@ -18,5 +18,5 @@
 <div>
   <h3>Modelagem de dados</h3>
   <p>Desenvolvida a partir do site Draw.io: https://app.diagrams.net/ </p>
-  <img src="src/main/java/com/cvbuilder/resume/doc/CvBuilderModelagem.png" alt="modelagemDados" height="500" width="900"/>  
+  <img src="src/main/java/com/cvbuilder/doc/CvBuilderModelagem.png" alt="modelagemDados" height="500" width="900"/>  
 </div>
