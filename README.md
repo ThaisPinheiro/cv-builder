@@ -15,6 +15,8 @@
   * <code class="lang-markdown">Postman</code>
   * <code class="lang-markdown">Swagger</code>
 
+  Testes unitários no back-end
+  * <code class="lang-markdown">JUnit</code>
 <div>
   <h3>Modelagem de dados</h3>
   <p>Desenvolvida a partir do site Draw.io: https://app.diagrams.net/ </p>
