@@ -22,19 +22,19 @@ import com.cvbuilder.user.UserModel;
 @Setter
 @Table(name = "resume")
 public class ResumeModel implements Serializable {
-  
-    @Serial
-    private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+  @Serial
+  private static final long serialVersionUID = 1L;
 
-    @Column(nullable = false, length = 2000)
-    private String description;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private UUID id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private UserModel userResume;
+  @Column(nullable = false, length = 2000)
+  private String description;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "user_id", nullable = false)
+  private UserModel userResume;
 
 }
