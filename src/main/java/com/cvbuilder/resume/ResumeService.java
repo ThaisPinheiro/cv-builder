@@ -46,9 +46,4 @@ public class ResumeService {
     return savedResumeDto;
   }
 
-  @Transactional
-  public ResumeModel save(ResumeModel resumeModel) {
-    return resumeRepository.save(resumeModel);
-  }
-
 }
