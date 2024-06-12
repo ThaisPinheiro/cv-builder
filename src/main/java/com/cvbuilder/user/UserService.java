@@ -66,9 +66,5 @@ public class UserService {
     BeanUtils.copyProperties(savedUserModel, savedUserDto);
     return savedUserDto;
   }
-  
-  @Transactional
-  public UserModel save(UserModel userModel) {
-    return userRepository.save(userModel);
-  }
+
 }
