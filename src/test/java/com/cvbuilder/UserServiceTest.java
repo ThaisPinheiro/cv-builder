@@ -11,7 +11,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.BeanUtils;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import com.cvbuilder.user.UserModel;
 import com.cvbuilder.user.UserRepository;
@@ -19,11 +18,11 @@ import com.cvbuilder.user.UserService;
 import com.cvbuilder.user.dtos.UserDto;
 
 @ExtendWith(MockitoExtension.class)
-@SpringBootTest
 class UserServiceTest {
 
     @Mock
-    private UserRepository userRepository;
+    private UserRepository 
+    userRepository;
 
     @InjectMocks
     private UserService userService;
@@ -35,8 +34,13 @@ class UserServiceTest {
     @BeforeEach
     public void setUp() { 
         userDto = new UserDto();
-        userDto.setName("teste");
-        userDto.setEmail("teste@gmail.com");
+        userDto.setName("Luana");
+        userDto.setSurname(null);
+        userDto.setTelephoneNumber("1799999999");
+        userDto.setEmail("luana@gmail.com");
+        userDto.setSocialAccount("https://linkedin.com/luana");
+        userDto.setPortfolio("https://github.com/luanavma");
+        userDto.setAboutMe("This is not a real description.");
 
         userModel = new UserModel();
         BeanUtils.copyProperties(userDto, userModel); 
@@ -49,7 +53,11 @@ class UserServiceTest {
         UserDto savedUserDto = userService.create(userDto);
 
         assertEquals(userDto.getName(), savedUserDto.getName());
+        assertEquals(userDto.getSurname(), savedUserDto.getSurname());
+        assertEquals(userDto.getTelephoneNumber(), savedUserDto.getTelephoneNumber());
         assertEquals(userDto.getEmail(), savedUserDto.getEmail());
+        assertEquals(userDto.getSocialAccount(), savedUserDto.getSocialAccount());
+        assertEquals(userDto.getPortfolio(), savedUserDto.getPortfolio());
+        assertEquals(userDto.getAboutMe(), savedUserDto.getAboutMe());
+     }
     }
-
-}
