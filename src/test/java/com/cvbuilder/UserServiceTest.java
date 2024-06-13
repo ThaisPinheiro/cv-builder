@@ -2,6 +2,8 @@ package com.cvbuilder;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -21,8 +23,7 @@ import com.cvbuilder.user.dtos.UserDto;
 class UserServiceTest {
 
     @Mock
-    private UserRepository 
-    userRepository;
+    private UserRepository userRepository;
 
     @InjectMocks
     private UserService userService;
@@ -35,15 +36,15 @@ class UserServiceTest {
     public void setUp() { 
         userDto = new UserDto();
         userDto.setName("Luana");
-        userDto.setSurname(null);
+        userDto.setSurname("Machado");
         userDto.setTelephoneNumber("1799999999");
         userDto.setEmail("luana@gmail.com");
-        userDto.setSocialAccount("https://linkedin.com/luana");
+        userDto.setSocialAccount("https://linkedin.com/in/luana");
         userDto.setPortfolio("https://github.com/luanavma");
         userDto.setAboutMe("This is not a real description.");
 
         userModel = new UserModel();
-        BeanUtils.copyProperties(userDto, userModel); 
+        BeanUtils.copyProperties(userDto, userModel);
     }
 
     @Test
@@ -59,5 +60,8 @@ class UserServiceTest {
         assertEquals(userDto.getSocialAccount(), savedUserDto.getSocialAccount());
         assertEquals(userDto.getPortfolio(), savedUserDto.getPortfolio());
         assertEquals(userDto.getAboutMe(), savedUserDto.getAboutMe());
+
+        verify(userRepository, times(1)).save(any(UserModel.class));
      }
+
     }
