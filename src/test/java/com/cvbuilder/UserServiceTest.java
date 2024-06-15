@@ -12,8 +12,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.BeanUtils;
 
+import com.cvbuilder.mother.UserMother;
 import com.cvbuilder.user.UserModel;
 import com.cvbuilder.user.UserRepository;
 import com.cvbuilder.user.UserService;
@@ -34,17 +34,8 @@ class UserServiceTest {
 
     @BeforeEach
     public void setUp() { 
-        userDto = new UserDto();
-        userDto.setName("Luana");
-        userDto.setSurname("Machado");
-        userDto.setTelephoneNumber("1799999999");
-        userDto.setEmail("luana@gmail.com");
-        userDto.setSocialAccount("https://linkedin.com/in/luana");
-        userDto.setPortfolio("https://github.com/luanavma");
-        userDto.setAboutMe("This is not a real description.");
-
-        userModel = new UserModel();
-        BeanUtils.copyProperties(userDto, userModel);
+        userDto = UserMother.userDtoMother();
+        userModel = UserMother.userModelMother();
     }
 
     @Test
