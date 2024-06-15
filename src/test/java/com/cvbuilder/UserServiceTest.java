@@ -6,14 +6,17 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.BeanUtils;
 
+import com.cvbuilder.mother.UserMother;
 import com.cvbuilder.user.UserModel;
 import com.cvbuilder.user.UserRepository;
 import com.cvbuilder.user.UserService;
@@ -32,19 +35,13 @@ class UserServiceTest {
 
     private UserModel userModel;
 
+    private UserModel userModel2;
+
     @BeforeEach
     public void setUp() { 
-        userDto = new UserDto();
-        userDto.setName("Luana");
-        userDto.setSurname("Machado");
-        userDto.setTelephoneNumber("1799999999");
-        userDto.setEmail("luana@gmail.com");
-        userDto.setSocialAccount("https://linkedin.com/in/luana");
-        userDto.setPortfolio("https://github.com/luanavma");
-        userDto.setAboutMe("This is not a real description.");
-
-        userModel = new UserModel();
-        BeanUtils.copyProperties(userDto, userModel);
+        userDto = UserMother.userDtoMother();
+        userModel = UserMother.userModelMother();
+        userModel2 = UserMother.userModelMother();
     }
 
     @Test
@@ -62,6 +59,19 @@ class UserServiceTest {
         assertEquals(userDto.getAboutMe(), savedUserDto.getAboutMe());
 
         verify(userRepository, times(1)).save(any(UserModel.class));
+     }
+
+     @Test
+     void findAllUsers() {
+        List<UserModel> userModelList = Arrays.asList(userModel, userModel2);
+        when(userRepository.findAll()).thenReturn(userModelList);
+
+        List<UserModel> result = userService.findAll();
+
+        assertEquals(2, result.size());
+        assertEquals(userModelList, result);
+        verify(userRepository, times(1)).findAll();
+
      }
 
     }
